@@ -10,13 +10,17 @@ services:
     ports:
       - "80:80"
       - "443:443"
-
+ 
   ghost:
+    image: ghost:1-alpine
     restart: unless-stopped
-    build:
-      context: ./ghost
-      args:
-        url: 'https://your.domain.here'
+    environment:
+      NODE_ENV: production
+      url: https://your.domain.here
+      mail__transport: SMTP
+      mail__options__service: Mailgun
+      mail__options__auth__user: you@example.com
+      mail__options__auth__pass: super-secret-password
     volumes:
       - ./ghost/content:/var/lib/ghost/content/
     ports:
