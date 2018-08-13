@@ -7,12 +7,12 @@ The principle differences here are that I use the official Ghost docker image in
 # Setup
 
 1. Clone repository to your server
-- In `proxy/Caddyfile` change `your.domain.here` and `you@example.com` to your blog's domain and your email (email used for generation of SSL certificate)
-- In `docker-compose.yml` change `https://your.domain.here` to your https domain
-- Also in `docker-compose.yml`, change the `mail__options__auth__user` and `mail__options__auth__pass` parameter values to your Mailgun SMTP credentials as needed to send emails from Ghost, as described here: https://docs.ghost.org/docs/mail-config. If you don't need this, then you may be able to simply delete the `mail__*` options, though I haven't personally tried this without them.
-- Ensure your DNS record is pointed at your server. If it is not, Let's Encrypt will not be able to generate your SSL cert and Caddy will fail to start.
-- Run `docker-compose build` to build the docker images
-- Run `docker-compose up` to run everything in the foreground, then press Ctrl-C to exit gracefully
+2. In `proxy/Caddyfile` change `your.domain.here` and `you@example.com` to your blog's domain and your email (email used for generation of SSL certificate)
+3. In `docker-compose.yml` change `https://your.domain.here` to your https domain
+4. Also in `docker-compose.yml`, change the `mail__options__auth__user` and `mail__options__auth__pass` parameter values to your Mailgun SMTP credentials as needed to send emails from Ghost, as described here: https://docs.ghost.org/docs/mail-config. If you don't need this, then you may be able to simply delete the `mail__*` options, though I haven't personally tried this without them.
+5. Ensure your DNS record is pointed at your server. If it is not, Let's Encrypt will not be able to generate your SSL cert and Caddy will fail to start.
+6. Run `docker-compose build` to build the docker images
+7. Run `docker-compose up` to run everything in the foreground, then press Ctrl-C to exit gracefully
 
 # Operation
 
