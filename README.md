@@ -1,6 +1,6 @@
 # Description
 
-docker-ghost-caddy will set up a [Ghost blog](https://ghost.org/) behind a Caddy proxy on Docker Compose. Your blog will be secured by an SSL certificate from Let's Encrypt.
+docker-ghost-caddy will set up a [Ghost blog](https://ghost.org/) behind a Caddy proxy on Docker Compose. Your blog will be secured by an SSL certificate from Let's Encrypt. I forked this repo from [Nate Todd's version that can be found here](https://github.com/ntodd/docker-ghost-caddy)
 
 # Setup
 
