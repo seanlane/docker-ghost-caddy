@@ -10,6 +10,8 @@ services:
     volumes:
       - $PWD/Caddyfile:/etc/caddy/Caddyfile
       - $PWD/logs:/logs
+      - caddy_data:/data
+      - caddy_config:/config
 
   ghost:
     image: ghost:3
@@ -22,3 +24,7 @@ services:
       # mail__options__auth__pass: super-secret-password
     volumes:
       - $PWD/content:/var/lib/ghost/content
+
+volumes:
+  caddy_data:
+  caddy_config:
